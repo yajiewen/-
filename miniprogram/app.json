@@ -1,0 +1,44 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/send/send",
+        "pages/user/user",
+        "custom-tab-bar/index"
+    ],
+    "tabBar": {
+        "color": "#7A7E83",
+        "selectedColor": "#3cc51f",
+        "borderStyle": "black",
+        "backgroundColor": "#ffffff",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "iconPath": "static/images/ic_menu_home_nor.png",
+                "selectedIconPath": "static/images/ic_menu_home_pressed.png",
+                "text": "首页面"
+            },
+            {
+                "pagePath": "pages/send/send",
+                "iconPath": "static/images/ic_menu_add_nor.png",
+                "selectedIconPath": "static/images/ic_menu_add_nor.png",
+                "text": "发布"
+            },
+            {
+                "pagePath": "pages/user/user",
+                "iconPath": "static/images/ic_menu_me_nor.png",
+                "selectedIconPath": "static/images/ic_menu_me_pressed.png",
+                "text": "个人中心"
+            }
+        ]
+    },
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "厦大商圈",
+        "navigationBarTextStyle": "black",
+        "initialRenderingCache": "static"
+
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json"
+}

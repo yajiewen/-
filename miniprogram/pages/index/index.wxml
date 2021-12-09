@@ -1,0 +1,5 @@
+<!--index.wxml-->
+<view class="container">
+  <scroll-view lower-threshold ="60" >
+  </scroll-view>
+</view>

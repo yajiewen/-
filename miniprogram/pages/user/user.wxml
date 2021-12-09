@@ -1,0 +1,50 @@
+<view class="container">
+  <!-- 用户信息 -->
+    <view class="userinfo">
+        <view wx:if="{{!hasinfo}}" >
+        <button bindtap="getUserProfile">
+            授 权 登 陆
+        </button>
+    </view>
+    <view wx:else >
+        <image class="userinfo-avatar" mode="cover" src="{{userinfo.avatarUrl}}"></image>
+        <text class="userinfo-nickname">{{userinfo.nickName}}</text>
+    </view>
+    </view>
+  <!-- 菜单 -->
+
+
+    <view class="page-section-spacing">
+        <view class="flex-wrp" style="flex-direction:row;">
+          <view class="flex-item demo-text-1">
+              <text class="icon publish"></text>
+            </view>
+          <view class="flex-item demo-text-2">我的发布</view>
+          <view class="flex-item demo-text-3">></view>
+        </view>
+      </view>
+
+      <view class="page-section">
+        <view class="flex-wrp" style="flex-direction:row;">
+          <view class="flex-item demo-text-1">
+              <text class="icon publish"></text>
+            </view>
+          <view class="flex-item demo-text-2">我的收藏</view>
+          <view class="flex-item demo-text-3">></view>
+        </view>
+      </view>
+
+      <button bindtap="addData">
+        添加数据
+      </button>
+
+      <button bindtap="getData">
+        查询数据
+      </button>
+
+      <input placeholder="id" type="text" model:value="{{delid}}"/>
+      <button bindtap="delData">
+        删除数据
+      </button>
+
+  </view>

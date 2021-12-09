@@ -1,0 +1,3 @@
+<!--pages/send/send.wxml-->
+<button bindtap="addData"> 
+</button>

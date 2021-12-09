@@ -1,0 +1,29 @@
+.userinfo-avatar {
+    overflow: hidden;
+    width: 128rpx;
+    height: 128rpx;
+    margin: 20rpx;
+    border-radius: 50%;
+  }
+
+.userinfo {
+display: flex;
+flex-direction: column;
+align-items: center;
+color: #aaa;
+}
+
+.flex-wrp{
+    margin-top: 60rpx;
+    display:flex;
+  }
+  .flex-item{
+    width: 200rpx;
+    height: 90rpx;
+    font-size: 40rpx;
+  }
+  .flex-item-V{
+    margin: 0 auto;
+    width: 300rpx;
+    height: 200rpx;
+  }
