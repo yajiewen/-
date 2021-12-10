@@ -1,3 +1,105 @@
-<!--pages/send/send.wxml-->
-<button bindtap="addData"> 
-</button>
+<view class="page-section-spacing upbar">
+        <view  style="flex-direction:row; display: flex;">
+            <view class="{{storesend ? 'bt11':'bt1'}}" bindtap="changeStyle">商 铺 上 传</view>
+            <view class="{{personsend ? 'bt22':'bt2'}}" bindtap="changeStyle">个 人 上 传</view>
+        </view>
+</view>
+<view class="container" wx:if="{{storesend}}">
+  <view class="post-goods">
+    <input class="title" maxlength="60" placeholder="店铺名称" bindinput="getStoreName" />
+    <input class="title" maxlength="100" placeholder="店铺位置" bindinput="getStoreAddr" />
+    <view class="input-box">
+      <textarea class="content" maxlength="300" placeholder="优惠信息" bindinput="getYouHuiInfo" />
+      <text class="count">{{300 - youhuiinfo.length}}</text>
+    </view>
+
+    <view class='img'>
+      <view wx:for="{{imgList}}" wx:key="{{index}}">
+        <view wx:if="{{imgList[index] == 'false'}}">
+          <!-- 上传中 -->
+          <view class='add blur' style="background-image: url('{{tmpImgList[index]}}')">
+            <image class='loading' src='/static/images/loading.png'></image>
+          </view>
+        </view>
+        <!-- 完成上传 -->
+        <view wx:else>
+          <view class='add'>
+            <image class="delete" src="/static/images/delete.png" bindtap='removeImg' data-index='{{index}}'></image>
+            <image class='upload' bindtap='preview' data-url='{{imgList[index]}}' mode='aspectFill' src='{{imgList[index]}}'></image>
+          </view>
+        </view>
+      </view>
+      <view wx:if="{{imgList.length < 6}}" class='add' bindtap='addImage'>
+        <text class='txt'>添加图片</text>
+        <image class='icon' src='/static/images/plus.png'></image>
+      </view>
+    </view>
+  </view>
+  <view class="bottom-btn">
+    <button class="r" bindtap='onPost' disabled="{{button1}}">确 认 发 布</button>
+  </view>
+</view>
+
+<view class="container" wx:if="{{personsend}}">
+  <view class="post-goods">
+    <input class="title" maxlength="60" placeholder="标题，品牌品类都是买家喜欢搜索的" bindinput="getThingName" />
+    <view class="input-box">
+      <textarea class="content" bindinput="getThingInfo" maxlength="800" placeholder="描述一下宝贝的转手原因，入手渠道和使用感受" />
+      <text class="count">{{500 - thinginfo.length}}</text>
+    </view>
+
+    <view class='img'>
+      <view wx:for="{{imgList2}}" wx:key="{{index}}">
+        <view wx:if="{{imgList2[index] == 'false'}}">
+          <!-- 上传中 -->
+          <view class='add blur' style="background-image: url('{{tmpImgList2[index]}}')">
+            <image class='loading' src='/static/images/loading.png'></image>
+          </view>
+        </view>
+        <view wx:else>
+          <!-- 完成上传 -->
+          <view class='add'>
+            <image class="delete" src="/static/images/delete.png" bindtap='removeImg2' data-index='{{index}}'></image>
+            <image class='upload' bindtap='preview2' data-url='{{imgList2[index]}}' mode='aspectFill' src='{{imgList2[index]}}'></image>
+          </view>
+        </view>
+      </view>
+      <view wx:if="{{imgList2.length < 6}}" class='add' bindtap='addImage2'>
+        <text class='txt'>添加图片</text>
+        <image class='icon' src='/static/images/plus.png'></image>
+      </view>
+    </view>
+
+  </view>
+
+  <view class="detail">
+    <view class="element">
+      <view class="lable">价格</view>
+      <view class="rmb">¥</view>
+      <input class="price" type="digit" placeholder="0.00" bindinput="getThingPrice" />
+    </view>
+    <view class="element">
+      <view class="lable">入手价</view>
+      <view class="rmb">¥</view>
+      <input class="price" type="digit" placeholder="0.00" bindinput="getThingOriginPrice" />
+    </view>
+    <view class="element">
+      <view class="lable">运费</view>
+      <view class="rmb">¥</view>
+      <input class="price" type="digit" placeholder="0.00" bindinput="getThingTranPrice" value='{{postage}}' disabled='{{isPostageFree}}' />
+    </view>
+
+    <view class="element">
+      <view class="lable">交易方式</view>
+      <radio-group bindchange="dealway">
+        <label>
+          <radio color="#ffd966" value="facetoface" />同城面交
+          <radio color="#ffd966" value="nofacetoface"/>邮寄
+        </label>
+      </radio-group>
+    </view>
+  </view>
+  <view class="bottom-btn">
+    <button disabled="{{button2}}" class="r" bindtap='onPost2'>确认发布</button>
+  </view>
+</view>
