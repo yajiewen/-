@@ -9,7 +9,7 @@
   </swiper>
 
   <!-- 纵向滚动 -->
-  <scroll-view scroll-y="true" style="height: 100%;">
+  <scroll-view bindscrolltolower="refreshInfoList" scroll-y="true" style="height: 100%;">
     <view>
       <scroll-view enhanced="true" paging-enabled="true" scroll-x="true" class="scrollviewrow">
         <view class="scrollviewrow-item {{selectindex == 0 ? 'bt11':'bt1'}}" data-index="0" bindtap="changeStyle">美食商家</view>
@@ -21,17 +21,28 @@
         <view class="scrollviewrow-item {{selectindex == 6 ? 'bt11':'bt1'}}" data-index="6" bindtap="changeStyle">其他</view>
       </scroll-view>
     </view>
-    <!-- 商品列表 -->
-    <view class="thingclass" wx:for="{{100}}" wx:key="index">
-        <view style="flex-direction:row; display: flex;">
-          <view class="titleclass">商 铺 上 传</view>
-          <view class="priceclass">¥ 1000</view>
-        </view>
-        <view class="infoclass">youhdsfasdfasdf dsfsadfsdafasdfsdafsdfsadfasdfdfssdfadfasdfui1000</view>
-        <view class="imageclass">
-        <image class="infoimage" src="cloud://cloud1-2gm9nq427383349e.636c-cloud1-2gm9nq427383349e-1308697825/personthing0o432q5QSaCmqkHq0HhmzMMSJtFZY1639902186000.png"></image>
-        </view>
+    <!-- 商家列表 -->
+    <view wx:if="{{selectindex == 0}}" class="thingclass" wx:for="{{storeList}}" wx:key="index">
+      <view style="flex-direction:row; display: flex;">
+        <view class="titleclass">{{item.storename}}</view>
+      </view>
+      <view class="infoclass">{{item.storeinfo}}</view>
+      <view class="imageclass">
+        <image wx:for="{{item.storeimg}}" class="infoimage" src="{{item}}"></image>
+      </view>
     </view>
-
+    <!-- 商品列表 -->
+    <view  wx:for="{{thingList}}" wx:if="{{selectindex == index + 1}}">
+      <view class="thingclass" wx:for="{{item}}" wx:key="index">
+        <view style="flex-direction:row; display: flex;">
+          <view class="titleclass">{{item.thingname}}</view>
+          <view class="priceclass">¥ {{item.thingprice}}</view>
+        </view>
+        <view class="infoclass">{{item.thinginfo}}</view>
+        <view class="imageclass">
+          <image wx:for="{{item.thingimg}}" class="infoimage" src="{{item}}"></image>
+        </view>
+      </view>
+    </view>
   </scroll-view>
 </view>
