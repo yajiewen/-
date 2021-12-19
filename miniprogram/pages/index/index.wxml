@@ -1,6 +1,37 @@
 <!--index.wxml-->
 <view class="container">
-这里是首页
-  <scroll-view lower-threshold ="60" >
+  <swiper indicator-dots="true" autoplay="true" interval="5000" duration="500">
+    <!-- <block wx:for="{{background}}" wx:key="*this">
+          <swiper-item>
+            <view class="swiper-item {{item}}"></view>
+          </swiper-item>
+        </block> -->
+  </swiper>
+
+  <!-- 纵向滚动 -->
+  <scroll-view scroll-y="true" style="height: 100%;">
+    <view>
+      <scroll-view enhanced="true" paging-enabled="true" scroll-x="true" class="scrollviewrow">
+        <view class="scrollviewrow-item {{selectindex == 0 ? 'bt11':'bt1'}}" data-index="0" bindtap="changeStyle">美食商家</view>
+        <view class="scrollviewrow-item {{selectindex == 1 ? 'bt11':'bt1'}}" data-index="1" bindtap="changeStyle">学习类 </view>
+        <view class="scrollviewrow-item {{selectindex == 2 ? 'bt11':'bt1'}}" data-index="2" bindtap="changeStyle">生活类</view>
+        <view class="scrollviewrow-item {{selectindex == 3 ? 'bt11':'bt1'}}" data-index="3" bindtap="changeStyle">数码类</view>
+        <view class="scrollviewrow-item {{selectindex == 4 ? 'bt11':'bt1'}}" data-index="4" bindtap="changeStyle">化妆品</view>
+        <view class="scrollviewrow-item {{selectindex == 5 ? 'bt11':'bt1'}}" data-index="5" bindtap="changeStyle">衣品类</view>
+        <view class="scrollviewrow-item {{selectindex == 6 ? 'bt11':'bt1'}}" data-index="6" bindtap="changeStyle">其他</view>
+      </scroll-view>
+    </view>
+    <!-- 商品列表 -->
+    <view class="thingclass" wx:for="{{100}}" wx:key="index">
+        <view style="flex-direction:row; display: flex;">
+          <view class="titleclass">商 铺 上 传</view>
+          <view class="priceclass">¥ 1000</view>
+        </view>
+        <view class="infoclass">youhdsfasdfasdf dsfsadfsdafasdfsdafsdfsadfasdfdfssdfadfasdfui1000</view>
+        <view class="imageclass">
+        <image class="infoimage" src="cloud://cloud1-2gm9nq427383349e.636c-cloud1-2gm9nq427383349e-1308697825/personthing0o432q5QSaCmqkHq0HhmzMMSJtFZY1639902186000.png"></image>
+        </view>
+    </view>
+
   </scroll-view>
 </view>

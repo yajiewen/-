@@ -1,1 +1,82 @@
 /**index.wxss**/
+page, .container {
+    height: 100%;
+    background: #f4f4f4;
+  }
+.scrollviewrow{
+    margin-top: 20rpx;
+    white-space: nowrap;
+    widows: 100%;
+    background: #fff;
+}
+.scrollviewrow-item{
+    display: inline-block;
+    width: 100%;
+    height: 80rpx;
+}
+
+.bt1{
+    height: 80rpx;
+    line-height: 80rpx;
+    width: 25%;
+    text-align:center;
+  }
+  .bt11{
+    height: 80rpx;
+    line-height: 80rpx;
+    width: 25%;
+    text-align:center;
+    border-bottom: thin solid;
+    /* border-bottom-color: #ffd966; */
+    color: #ffd966;
+  }
+
+  .thingclass{
+      margin: 20rpx;
+      width: auto;
+      height: auto;
+      background: #fff;
+      border-radius: 15rpx;
+  }
+
+  .titleclass{
+      margin-top: 10rpx;
+      margin-left: 30rpx;
+      width: 50%;
+      height: 70rpx;
+      line-height: 70rpx;
+      text-align: left;
+  }
+  .priceclass{
+    margin-top: 10rpx;
+    margin-right: 30rpx;
+    width: 50%;
+    height: 70rpx;
+    line-height: 70rpx;
+    text-align: right;
+    color: red;
+    border: solid;
+  }
+  .infoclass{
+    margin-top: 10rpx;
+    margin-right: 30rpx;
+    margin-left: 30rpx;
+    width: auto;
+    height: auto;
+    text-align: left;
+    border: solid;
+    color:#72777b;
+  }
+  .imageclass{
+    margin-top: 10rpx;
+    margin-right: 30rpx;
+    margin-left: 30rpx;
+    width: auto;
+    height: auto;
+    border: solid;
+  }
+  .infoimage{
+    height: 200rpx;
+    width: 200rpx;
+    border: 2rpx solid #ddd;
+  }

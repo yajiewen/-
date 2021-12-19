@@ -30,7 +30,7 @@ page, .container {
     line-height: 80rpx;
     width: 50%;
     text-align:center;
-    border-bottom: solid;
+    border-bottom:thin solid;
     border-bottom-color: #ffd966;
     color: #ffd966;
     font-size: medium;
@@ -47,7 +47,7 @@ page, .container {
     line-height: 80rpx;
     width: 50%;
     text-align:center;
-    border-bottom: solid;
+    border-bottom:thin solid;
     border-bottom-color: #ffd966;
     color: #ffd966;
     font-size: medium;
@@ -207,7 +207,6 @@ page, .container {
     z-index: 10;
     width: 750rpx;
     display: flex;
-    /* background: #fff; */
     padding: 25rpx;
   }
   
@@ -261,15 +260,13 @@ page, .container {
     padding: 0 0 20rpx 20rpx;
   }
   
-  .location  .icon {
-    background: url(https://i.postimg.cc/Hkf6dJzv/placeholder-2.png) 0 center no-repeat;
-    background-size: 30rpx;
-    margin-right: 80rpx;
-    padding-left: 38rpx;
-    color: #666;
-  }
-  
+
   .detail .rmb {
+    line-height: 50rpx;
+    margin-right: 10rpx;
+  }
+
+  .leibieclass{
     line-height: 50rpx;
     margin-right: 10rpx;
   }
