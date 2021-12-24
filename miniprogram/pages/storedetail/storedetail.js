@@ -1,6 +1,8 @@
 // pages/storedetail/storedetail.js
 Page({
     data:{
+        username:"",
+        userimg:"",
         storename: "",
         storeaddress: "",
         storeinfo: "",

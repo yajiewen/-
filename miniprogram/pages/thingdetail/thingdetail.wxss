@@ -23,24 +23,31 @@ page,.container {
     text-align: center;
     /* border: solid; */
 }
-.storeaddress{
+.price{
+    margin: 20rpx;
+    color:red;
+    bottom: 10rpx;
+    font-size: 35rpx;
+}
+.oriprice{
     margin: 20rpx;
     color: #72777b;
     bottom: 10rpx;
 }
-.storename{
+.thingname{
     line-height: 120rpx;
     width: 100%;
     text-align: center;
     /* border: solid; */
     font-size: 37rpx;
 }
-.storeinfo{
+.trans{
+    margin-left:20rpx;
+}
+.thinginfo{
     background: #fff;
     width: auto;
-    height: 100%;
 }
-
 .titlediscount{
     margin: 20rpx;
     width: auto;
@@ -51,20 +58,19 @@ page,.container {
     border-left: tomato solid;
 }
 
-.storeinfodis{
+.thinginfodis{
     margin-left:20rpx;
     margin-right:20rpx;
     width: auto;
     height: auto;
-    color: #72777b;
+    /* color: #72777b; */
 }
-.storeimgs{
+.thingimgs{
     margin:20rpx;
     width: auto;
     height: auto;
 }
-
-.storeimg{
+.thingimg{
     width: 100%;
     border-radius:20rpx;
 }

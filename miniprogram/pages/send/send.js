@@ -17,6 +17,7 @@ Page({
     youhuiinfo: "",
     address: "",
     // 个人data
+    userconnect:"",
     thingname: "",
     thinginfo: "",
     thingprice: "",
@@ -34,7 +35,9 @@ Page({
     leibie: ["学习类", "生活类", "数码类", "化妆品", "衣品类", "其他"],
     selectedindex: 0
   },
-
+  getUserConnect(event){
+    this.data.userconnect = event.detail.value
+  },
   // 刷新商铺信息
   clearStoreInfo() {
     this.setData({
@@ -55,6 +58,7 @@ Page({
       thingprice: "",
       thingoriginprice: "",
       thingtranprice: "",
+      userconnect:"",
       facetoface: "facetoface",
       nofacetoface: "nofacetoface",
     })
@@ -478,6 +482,7 @@ Page({
       data: {
         username: app.globaldata.userinfo.nickName,
         userimg: app.globaldata.userinfo.avatarUrl,
+        userconnect: this.data.userconnect,
         openid: app.globaldata.openid,
         thingname: this.data.thingname,
         thinginfo: this.data.thinginfo,

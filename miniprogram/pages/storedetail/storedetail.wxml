@@ -1,3 +1,15 @@
 <!--pages/storedetail/storedetail.wxml-->
-<view class="container">
+<view class="page-section-spacing userinfo">
+    <view style="flex-direction:row; display: flex;">
+        <view class="imgview"><image class="userinfo-avatar" src="{{userimg}}"></image></view>
+        <view class="usernameview">{{username}}</view>
+        <view class="storename">{{storename}}</view>
+    </view>
+    <view class="storeaddress">{{storeaddress}}</view>
+</view>
+
+<view class="storeinfo" >
+    <view style="display: flex;"><view class="titlediscount">店铺优惠信息详情</view></view>
+    <view class="storeinfodis"><text decode>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{storeinfo}}</text></view>
+    <view class="storeimgs" wx:for="{{storeimg}}" wx:key="storeimginfo"><image class="storeimg" src="{{item}}"></image></view>
 </view>

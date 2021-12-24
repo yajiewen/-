@@ -35,7 +35,14 @@ Page({
           url: "/pages/storedetail/storedetail?info=" + data,
         })
     },
-
+    gotoThingDetail(event){
+        let info = this.data.thingList[this.data.selectindex - 1][event.currentTarget.dataset.index]
+        // 把当前商品信息转化为字符串传递到另外一个页面
+        let data = JSON.stringify(info)
+        wx.navigateTo({
+          url: "/pages/thingdetail/thingdetail?info=" + data,
+        })
+    },
     // 上拉刷新
     refreshInfoList(event) {
         if (this.data.selectindex == 0 ) { //当前市商家列表

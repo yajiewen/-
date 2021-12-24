@@ -3,7 +3,8 @@
         "pages/index/index",
         "pages/send/send",
         "pages/user/user",
-        "pages/storedetail/storedetail"
+        "pages/storedetail/storedetail",
+        "pages/thingdetail/thingdetail"
     ],
     "tabBar": {
         "color": "#7A7E83",

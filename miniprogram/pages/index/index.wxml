@@ -33,7 +33,7 @@
     </view>
     <!-- 商品列表 -->
     <view  wx:for="{{thingList}}" wx:if="{{selectindex == index + 1}}" wx:key="thinglist">
-      <view class="thingclass" wx:for="{{item}}"  wx:key="thingitem" data-id="{{item._id}}">
+      <view class="thingclass" wx:for="{{item}}"  wx:key="thingitem" data-index="{{index}}" bindtap="gotoThingDetail">
         <view style="flex-direction:row; display: flex;">
           <view class="titleclass">{{item.thingname}}</view>
           <view class="priceclass">¥ {{item.thingprice}}</view>

@@ -1,0 +1,23 @@
+<!--pages/storedetail/storedetail.wxml-->
+<view class="page-section-spacing userinfo">
+    <view style="flex-direction:row; display: flex;">
+        <view class="imgview"><image class="userinfo-avatar" src="{{userimg}}"></image></view>
+        <view class="usernameview">{{username}}</view>
+    </view>
+    <view class="thingname">{{thingname}}</view>
+    <view style="flex-direction:row; display: flex;">
+        <view class="price">现价 :¥{{thingprice}}</view>
+        <view class="oriprice">原价 :¥{{thingoriginprice}}</view>
+    </view>
+    <view class="trans" wx:if="{{facetoface}}">交易方式: 当面自提</view>
+    <view class="trans" wx:if="{{!facetoface}}">
+        <view>交易方式: 邮寄</view>
+        <view>运费:{{thingtranprice}}</view>
+    </view>
+</view>
+
+<view class="thinginfo" >
+    <view style="display: flex;"><view class="titlediscount">物品详情</view></view>
+    <view class="thinginfodis"><text decode>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{thinginfo}}</text></view>
+    <view class="thingimgs" wx:for="{{thingimg}}" wx:key="storeimginfo"><image class="thingimg" src="{{item}}"></image></view>
+</view>
