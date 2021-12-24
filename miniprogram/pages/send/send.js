@@ -414,6 +414,8 @@ Page({
         }else{
           dbstorelist.add({
             data: {
+              username: app.globaldata.userinfo.nickName,
+              userimg: app.globaldata.userinfo.avatarUrl,
               openid: app.globaldata.openid,
               storename: this.data.storename,
               storeaddress: this.data.address,
@@ -474,6 +476,8 @@ Page({
     })
     dbthinglist.add({
       data: {
+        username: app.globaldata.userinfo.nickName,
+        userimg: app.globaldata.userinfo.avatarUrl,
         openid: app.globaldata.openid,
         thingname: this.data.thingname,
         thinginfo: this.data.thinginfo,

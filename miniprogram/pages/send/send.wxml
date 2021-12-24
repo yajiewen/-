@@ -14,7 +14,7 @@
     </view>
 
     <view class='img'>
-      <view wx:for="{{imgList}}" wx:key="{{index}}">
+      <view wx:for="{{imgList}}" wx:key="storeimg">
         <view wx:if="{{imgList[index] == 'false'}}">
           <!-- 上传中 -->
           <view class='add blur' style="background-image: url('{{tmpImgList[index]}}')">
@@ -49,7 +49,7 @@
     </view>
 
     <view class='img'>
-      <view wx:for="{{imgList2}}" wx:key="{{index}}">
+      <view wx:for="{{imgList2}}" wx:key="thingimg">
         <view wx:if="{{imgList2[index] == 'false'}}">
           <!-- 上传中 -->
           <view class='add blur' style="background-image: url('{{tmpImgList2[index]}}')">

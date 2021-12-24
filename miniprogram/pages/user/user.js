@@ -28,13 +28,14 @@ Page({
     },
   // 获取用户信息
   getUserProfile(){
+      this.getOpenid()
       wx.getUserProfile({
           desc: '获取用户信息',
           success: (result) => {
             this.setData({
               userinfo: result.userInfo,
           })
-              this.getOpenid()
+          app.globaldata.userinfo = result.userInfo
           },
           fail: (res) => {},
           complete: (res) => {},

@@ -1,23 +1,19 @@
 /**index.wxss**/
-page,
-.container {
+page,.container {
     height: 100%;
     background: #f4f4f4;
 }
-
 .scrollviewrow {
     margin-top: 20rpx;
     white-space: nowrap;
     widows: 100%;
     background: #fff;
 }
-
 .scrollviewrow-item {
     display: inline-block;
     width: 100%;
     height: 80rpx;
 }
-
 .bt1 {
     height: 80rpx;
     line-height: 80rpx;

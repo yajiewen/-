@@ -2,7 +2,8 @@
     "pages": [
         "pages/index/index",
         "pages/send/send",
-        "pages/user/user"
+        "pages/user/user",
+        "pages/storedetail/storedetail"
     ],
     "tabBar": {
         "color": "#7A7E83",
