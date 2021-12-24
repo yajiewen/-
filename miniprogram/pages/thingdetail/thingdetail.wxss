@@ -6,6 +6,7 @@ page,.container {
     /* height: 200rpx; */
     width: auto;
     background: #fff;
+    margin-bottom: 20rpx;
 }
 .imgview{
     width: auto;
@@ -23,23 +24,27 @@ page,.container {
     text-align: center;
     /* border: solid; */
 }
+.xianjia{
+    color: #72777b;
+}
 .price{
     margin: 20rpx;
     color:red;
     bottom: 10rpx;
-    font-size: 35rpx;
+    font-size: 38rpx;
 }
 .oriprice{
-    margin: 20rpx;
+    margin: 22rpx;
     color: #72777b;
     bottom: 10rpx;
 }
 .thingname{
-    line-height: 120rpx;
+    line-height: 80rpx;
+    margin-left: 20rpx;
     width: 100%;
-    text-align: center;
+    /* text-align: center; */
     /* border: solid; */
-    font-size: 37rpx;
+    font-size: 38rpx;
 }
 .trans{
     margin-left:20rpx;
@@ -60,10 +65,16 @@ page,.container {
 
 .thinginfodis{
     margin-left:20rpx;
-    margin-right:20rpx;
+    /* margin-right:20rpx; */
     width: auto;
     height: auto;
     /* color: #72777b; */
+}
+.connectway{
+    height: 50rpx;
+    margin-left:20rpx;
+    margin-right:20rpx;
+    text-align: center;
 }
 .thingimgs{
     margin:20rpx;
