@@ -1,0 +1,12 @@
+<view class="thingclass" wx:for="{{thingList}}" wx:key="thingitem" >
+    <view bindtap="gotoThingDetail" data-index="{{index}}">
+        <view style="flex-direction:row; display: flex;">
+            <view class="titleclass">{{item.thingname}}</view>
+        </view>
+        <view class="infoclass">{{item.thinginfo}}</view>
+        <view class="imageclass">
+            <image wx:for="{{item.thingimg}}" class="infoimage" src="{{item}}" wx:key="thingimg"></image>
+        </view>
+    </view>
+    <view class="button1" bindtap="delThing" data-index="{{index}}">下 架</view>
+</view>

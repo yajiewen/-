@@ -5,7 +5,8 @@
         "pages/user/user",
         "pages/storedetail/storedetail",
         "pages/thingdetail/thingdetail",
-        "pages/mycollect/mycollect"
+        "pages/mycollect/mycollect",
+        "pages/mythings/mythings"
     ],
     "tabBar": {
         "color": "#7A7E83",
