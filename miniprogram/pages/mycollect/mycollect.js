@@ -1,5 +1,6 @@
 let app = getApp()
 let dbthinglist = wx.cloud.database().collection("thinglist")
+let dbcollect = wx.cloud.database().collection("collect")
 let tools = require('../../tools/tools')
 Page({
 
@@ -8,6 +9,23 @@ Page({
         thingInfoList: [],
         thingBath: 0,
         gettedAll: false
+    },
+    // 取消收藏
+    cancelCollect(event){
+        dbcollect.doc(this.data.thingList[event.currentTarget.dataset.index]._id).remove({
+            success: res =>{
+                console.log(res)
+                tools.showRightToast("取消成功!")
+                this.data.thingList.splice(event.currentTarget.dataset.index,1)
+                this.data.thingInfoList.splice(event.currentTarget.dataset.index,1)
+                this.setData({
+                    thingInfoList: this.data.thingInfoList
+                })
+            },
+            fail: res => {
+                tools.showErrorToast("开了小差..")
+            }
+        })
     },
     gotoThingDetail(event) {
         let info = this.data.thingInfoList[event.currentTarget.dataset.index]

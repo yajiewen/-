@@ -1,6 +1,7 @@
 <!--pages/mycollect/mycollect.wxml-->
-<view class="thingclass" wx:for="{{thingInfoList}}" wx:key="thingitem" data-index="{{index}}" bindtap="gotoThingDetail">
-    <view style="flex-direction:row; display: flex;">
+<view class="thingclass" wx:for="{{thingInfoList}}" wx:key="thingitem" >
+    <view data-index="{{index}}" bindtap="gotoThingDetail">
+        <view style="flex-direction:row; display: flex;">
         <view class="titleclass">{{item.thingname}}</view>
         <view class="priceclass">¥ {{item.thingprice}}</view>
     </view>
@@ -8,4 +9,6 @@
     <view class="imageclass">
         <image wx:for="{{item.thingimg}}" class="infoimage" src="{{item}}" wx:key="thingimg"></image>
     </view>
+    </view>
+    <view class="button1" bindtap="cancelCollect" data-index="{{index}}">取 消 收 藏</view>
 </view>

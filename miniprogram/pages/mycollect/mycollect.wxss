@@ -14,7 +14,7 @@ page,.container {
 .titleclass {
     margin-top: 10rpx;
     margin-left: 30rpx;
-    width: 50%;
+    width: 80%;
     height: 70rpx;
     line-height: 70rpx;
     text-align: left;
@@ -23,7 +23,7 @@ page,.container {
 .priceclass {
     margin-top: 10rpx;
     margin-right: 30rpx;
-    width: 50%;
+    width: 20%;
     height: 70rpx;
     line-height: 70rpx;
     text-align: right;
@@ -54,4 +54,14 @@ page,.container {
     width: 200rpx;
     border: 2rpx #ddd;
     border-radius: 20rpx;
+}
+.button1 {
+    margin: 20rpx;
+    height: 70rpx;
+    line-height: 70rpx;
+    text-align: center;
+    background-color:#ffd966;
+    border: solid thin;
+    border-radius: 10rpx;
+    color: white;
 }
