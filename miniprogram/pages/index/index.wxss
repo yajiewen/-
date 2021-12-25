@@ -42,7 +42,7 @@ page,.container {
 .titleclass {
     margin-top: 10rpx;
     margin-left: 30rpx;
-    width: 50%;
+    width: 80%;
     height: 70rpx;
     line-height: 70rpx;
     text-align: left;
@@ -51,7 +51,7 @@ page,.container {
 .priceclass {
     margin-top: 10rpx;
     margin-right: 30rpx;
-    width: 50%;
+    width: 20%;
     height: 70rpx;
     line-height: 70rpx;
     text-align: right;

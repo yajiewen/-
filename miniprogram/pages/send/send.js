@@ -63,6 +63,7 @@ Page({
       thingoriginprice: "",
       thingtranprice: "",
       userconnect:"",
+      userphone:"",
       facetoface: "facetoface",
       nofacetoface: "nofacetoface",
     })
@@ -509,24 +510,24 @@ Page({
       }
     })
   },
-  // onLoad() {
-  //   if (app.globaldata.openid == "") {
-  //     tools.showErrorToast('请先登陆')
-  //     setTimeout(function () {
-  //       wx.switchTab({
-  //         url: '/pages/user/user',
-  //       })
-  //     }, 1000)
-  //   }
-  // },
-  // onShow() {
-  //   if (app.globaldata.openid == "") {
-  //     tools.showErrorToast('请先登陆')
-  //     setTimeout(function () {
-  //       wx.switchTab({
-  //         url: '/pages/user/user',
-  //       })
-  //     }, 1000)
-  //   }
-  // }
+  onLoad() {
+    if (app.globaldata.openid == "") {
+      tools.showErrorToast('请先登陆')
+      setTimeout(function () {
+        wx.switchTab({
+          url: '/pages/user/user',
+        })
+      }, 1000)
+    }
+  },
+  onShow() {
+    if (app.globaldata.openid == "") {
+      tools.showErrorToast('请先登陆')
+      setTimeout(function () {
+        wx.switchTab({
+          url: '/pages/user/user',
+        })
+      }, 1000)
+    }
+  }
 })

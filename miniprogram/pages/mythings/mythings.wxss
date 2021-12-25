@@ -14,7 +14,7 @@ page,.container {
 .titleclass {
     margin-top: 10rpx;
     margin-left: 30rpx;
-    width: 50%;
+    width: 80%;
     height: 70rpx;
     line-height: 70rpx;
     text-align: left;
@@ -27,7 +27,7 @@ page,.container {
     text-align: center;
     background-color:#ffd966;
     border: solid thin;
-    border-radius: 5rpx;
+    border-radius: 10rpx;
     color: white;
 }
 
@@ -55,4 +55,13 @@ page,.container {
     width: 200rpx;
     border: 2rpx #ddd;
     border-radius: 20rpx;
+}
+.priceclass {
+    margin-top: 10rpx;
+    margin-right: 30rpx;
+    width: 20%;
+    height: 70rpx;
+    line-height: 70rpx;
+    text-align: right;
+    color: red;
 }

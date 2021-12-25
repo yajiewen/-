@@ -42,7 +42,7 @@
 
 <view class="container" wx:if="{{personsend}}">
   <view class="post-goods">
-    <input class="title" maxlength="60" placeholder="请输入 标题，宝贝名称 品牌" bindinput="getThingName" model:value = "{{thingname}}"/>
+    <input class="title" maxlength="25" placeholder="请输入 标题，宝贝名称 品牌" bindinput="getThingName" model:value = "{{thingname}}"/>
     <view class="input-box">
       <textarea class="content" bindinput="getThingInfo" maxlength="800" placeholder="请描述一下您的宝贝 如品牌 成色 规格 购买渠道 转手原因等" model:value = "{{thinginfo}}"/>
       <text class="count">{{500 - thinginfo.length}}</text>

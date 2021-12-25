@@ -2,6 +2,7 @@
     <view bindtap="gotoThingDetail" data-index="{{index}}">
         <view style="flex-direction:row; display: flex;">
             <view class="titleclass">{{item.thingname}}</view>
+            <view class="priceclass">¥ {{item.thingprice}}</view>
         </view>
         <view class="infoclass">{{item.thinginfo}}</view>
         <view class="imageclass">
