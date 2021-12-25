@@ -26,17 +26,16 @@
     <view class="thingimgs" wx:for="{{thingimg}}" wx:key="storeimginfo">
         <image class="thingimg" src="{{item}}"></image>
     </view>
-    <view class="connectway">联系方式:{{userconnect}}</view>
 </view>
 
 <view style="display:flex" class="buttombar">
-    <view class="collect">
+    <view class="collect" bindtap="collectThing">
         收藏
     </view>
-    <view class="call">
+    <view class="call" bindtap="makeCall">
         拨打电话
     </view>
-    <view class="copy">
+    <view class="copy" bindtap="makeCopy">
         复制微信
     </view>
 </view>
