@@ -17,10 +17,7 @@ Page({
             url: "/pages/thingdetail/thingdetail?info=" + data,
         })
     },
-    /**
-     * 生命周期函数--监听页面加载
-     */
-    onLoad: function (options) {
+    getThingList(){
         wx.cloud.callFunction({
             name: "getMyCollect",
             data: {
@@ -41,10 +38,12 @@ Page({
                         }).get({
                             success: res => {
                                 console.log(res)
-                                this.data.thingInfoList.push(res.data[0])
-                                this.setData({
-                                    thingInfoList: this.data.thingInfoList
-                                })
+                                if(res.data.length != 0){
+                                    this.data.thingInfoList.push(res.data[0])
+                                    this.setData({
+                                        thingInfoList: this.data.thingInfoList
+                                    })
+                                }
                             },
                             fail: res => {
                                 tools.showErrorToast("开了小差...")
@@ -63,51 +62,13 @@ Page({
         })
     },
 
-    /**
-     * 页面上拉触底事件的处理函数
-     */
+    onLoad: function (options) {
+        this.getThingList()
+    },
+
     onReachBottom: function () {
         if (!this.data.gettedAll) {
-            wx.cloud.callFunction({
-                name: "getMyCollect",
-                data: {
-                    index: this.data.thingBath,
-                    openid: app.globaldata.openid
-                },
-                success: res => {
-                    console.log(res.result.data.length)
-                    console.log(res)
-                    console.log(this.data.thingList)
-                    if (res.result.data.length != 0) {
-                        this.data.thingBath += 1
-                        for (let i = 0; i < res.result.data.length; i++) {
-                            this.data.thingList.push(res.result.data[i])
-                            // 获取商品信息
-                            dbthinglist.where({
-                                _id:  res.result.data[i].thingid,
-                            }).get({
-                                success: res => {
-                                    console.log(res)
-                                    this.data.thingInfoList.push(res.data[0])
-                                    this.setData({
-                                        thingInfoList: this.data.thingInfoList
-                                    })
-                                },
-                                fail: res => {
-                                    tools.showErrorToast("开了小差...")
-                                }
-                            })
-                        }
-                        this.setData({
-                            thingList: this.data.thingList,
-                        })
-                    } else {
-                        this.data.gettedAll = true
-                    }
-                    console.log(this.data.thingList)
-                    console.log(this.data.thingInfoList)
-                }
-            })
+            this.getThingList()
         }else{
             console.log("已获取完")
         }
