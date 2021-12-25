@@ -7,8 +7,20 @@ Page({
         storeBach: 0,
         gettedAll: false,
     },
+    // 图片删除
+    delFile(fileIdList) {
+        wx.cloud.deleteFile({
+          fileList: fileIdList
+        }).then(res => {
+          console.log("删除图片成功", res.fileList)
+        }).catch(error => {
+    
+        })
+      },
     // 删除店铺
     delStore(event){
+        // 先删除图片
+        this.delFile(this.data.storeList[event.currentTarget.dataset.index].storeimg)
         dbstorelist.doc(this.data.storeList[event.currentTarget.dataset.index]._id).remove({
             success: res =>{
                 tools.showRightToast("删除成功!")
