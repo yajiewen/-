@@ -1,0 +1,57 @@
+page,.container {
+    height: 100%;
+    background: #f4f4f4;
+}
+
+.thingclass {
+    margin: 20rpx;
+    width: auto;
+    height: auto;
+    background: #fff;
+    border-radius: 15rpx;
+}
+
+.titleclass {
+    margin-top: 10rpx;
+    margin-left: 30rpx;
+    width: 50%;
+    height: 70rpx;
+    line-height: 70rpx;
+    text-align: left;
+}
+
+.priceclass {
+    margin-top: 10rpx;
+    margin-right: 30rpx;
+    width: 50%;
+    height: 70rpx;
+    line-height: 70rpx;
+    text-align: right;
+    color: red;
+}
+
+.infoclass {
+    margin-top: 10rpx;
+    margin-right: 30rpx;
+    margin-left: 30rpx;
+    width: auto;
+    height: auto;
+    text-align: left;
+    color: #72777b;
+}
+
+.imageclass {
+    margin-top: 10rpx;
+    margin-right: 30rpx;
+    margin-left: 30rpx;
+    width: auto;
+    height: auto;
+}
+
+.infoimage {
+    margin: 1rpx;
+    height: 200rpx;
+    width: 200rpx;
+    border: 2rpx #ddd;
+    border-radius: 20rpx;
+}

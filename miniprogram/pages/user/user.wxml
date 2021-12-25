@@ -1,37 +1,29 @@
 <view class="container">
   <!-- 用户信息 -->
-    <view class="userinfo">
-        <view wx:if="{{!hasinfo}}" >
-        <button bindtap="getUserProfile">
-            授 权 登 陆
-        </button>
+  <view class="userinfo">
+    <view wx:if="{{!hasinfo}}" class="button1">
+      <button bindtap="getUserProfile">
+        授 权 登 陆
+      </button>
     </view>
-    <view wx:else >
-        <image class="userinfo-avatar" mode="cover" src="{{userinfo.avatarUrl}}"></image>
-        <text class="userinfo-nickname">{{userinfo.nickName}}</text>
-    </view>
-    </view>
-  <!-- 菜单 -->
-
-
-    <view class="page-section-spacing">
-        <view class="flex-wrp" style="flex-direction:row;">
-          <view class="flex-item demo-text-1">
-              <text class="icon publish"></text>
-            </view>
-          <view class="flex-item demo-text-2">我的发布</view>
-          <view class="flex-item demo-text-3">></view>
+    <view wx:else>
+      <view>
+        <view class="imgview">
+          <image class="userinfo-avatar" src="{{userinfo.avatarUrl}}"></image>
         </view>
+        <view class="usernameview">{{userinfo.nickName}}</view>
       </view>
-
-      <view class="page-section">
-        <view class="flex-wrp" style="flex-direction:row;">
-          <view class="flex-item demo-text-1">
-              <text class="icon publish"></text>
-            </view>
-          <view class="flex-item demo-text-2">我的收藏</view>
-          <view class="flex-item demo-text-3">></view>
-        </view>
-      </view>
-
+    </view>
   </view>
+  <!-- 菜单 -->
+  <view class="menu" wx:if="{{hasinfo}}">
+  <view style="display: flex;">
+    <view class="token"><image class="tokenimg" src="/static/images/mylike.png"></image></view>
+    <view class="mycollect" bindtap="gotoMycollect">我 的 收 藏</view>
+  </view>
+  <view style="display: flex;">
+    <view class="token"><image class="tokenimg" src="/static/images/mylike.png"></image></view>
+    <view class="mycollect">我 的 发 布</view>
+  </view>
+  </view>
+</view>

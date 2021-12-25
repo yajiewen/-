@@ -1,3 +1,14 @@
+page, .container{
+  background-color: #fff;
+}
+.imgview{
+  width: auto;
+}
+.usernameview{
+  width: auto;
+  text-align: center;
+  /* border: solid; */
+}
 .userinfo-avatar {
     overflow: hidden;
     width: 100rpx;
@@ -12,18 +23,32 @@ flex-direction: column;
 align-items: center;
 color: #aaa;
 }
-
-.flex-wrp{
-    margin-top: 60rpx;
-    display:flex;
-  }
-  .flex-item{
-    width: 200rpx;
-    height: 90rpx;
-    font-size: 40rpx;
-  }
-  .flex-item-V{
-    margin: 0 auto;
-    width: 300rpx;
-    height: 200rpx;
-  }
+.button1{
+  position: relative;
+  top: 400rpx;
+}
+.menu{
+  margin: 20rpx;
+  /* border: solid; */
+}
+.menu .mycollect{
+  width: 90%;
+  margin-top: 10rpx;
+  line-height: 70rpx;
+  font-size: 40rpx;
+  text-align: left;
+  border-bottom: solid thin #d3d7d4;
+}
+.tokenimg{
+  height: 60rpx;
+  width: 60rpx;
+}
+.menu .token{
+  width: 10%;
+  margin-top: 10rpx;
+  margin-right: 30rpx;
+  line-height: 70rpx;
+  font-size: 40rpx;
+  text-align: center;
+  border-bottom: solid thin #d3d7d4;
+}
