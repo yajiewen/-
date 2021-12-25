@@ -27,7 +27,7 @@
   </view>
   <view style="display: flex;">
     <view class="token"><image class="tokenimg" src="/static/images/mylike.png"></image></view>
-    <view class="mycollect">我 发 布 的 店 铺</view>
+    <view class="mycollect" bindtap="gotoMystore">我 发 布 的 店 铺</view>
   </view>
   </view>
 </view>

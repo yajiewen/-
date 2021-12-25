@@ -11,6 +11,12 @@ Page({
       name:"",
       imageurl:"cloud://cloud1-2gm9nq427383349e.636c-cloud1-2gm9nq427383349e-1308697825/yajie.png"
   },
+  // 前往我发布的店铺页面
+  gotoMystore(){
+    wx.navigateTo({
+      url: '/pages/mystore/mystore',
+    })
+  },
   // 前往我发布的商品页面
   gotoMythings(){
     wx.navigateTo({

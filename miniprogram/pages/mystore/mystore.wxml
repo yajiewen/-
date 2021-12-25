@@ -1,0 +1,12 @@
+<view  class="thingclass" wx:for="{{storeList}}" wx:key="storelist" >
+    <view data-index="{{index}}" bindtap="gotoStoreDetail">
+        <view style="flex-direction:row; display: flex;">
+        <view class="titleclass">{{item.storename}}</view>
+    </view>
+    <view class="infoclass">{{item.storeinfo}}</view>
+    <view class="imageclass">
+        <image wx:for="{{item.storeimg}}" class="infoimage" src="{{item}}" wx:key="storeimgs"></image>
+    </view>
+    </view>
+    <view class="button1" bindtap="delStore" data-index="{{index}}">删 除</view>
+</view>
