@@ -106,10 +106,17 @@
       </radio-group>
     </view>
     <view class="element">
-      <view class="lable">联系方式</view>
+      <view class="lable">微信</view>
       <view class="rmb"> </view>
-      <input class="price" type="text" placeholder="微信 电话 QQ等" bindinput="getUserConnect" model:value='{{userconnect}}'/>
+      <input class="price" type="text" placeholder="微信" bindinput="getUserConnect" model:value='{{userconnect}}'/>
     </view>
+
+    <view class="element">
+      <view class="lable">手机</view>
+      <view class="rmb"> </view>
+      <input class="price" type="text" placeholder="手机号" bindinput="getUserPhone" model:value="{{userphone}}"/>
+    </view>
+
   </view>
   <view class="bottom-btn">
     <button disabled="{{button2}}" class="r" bindtap='onPost2'>确认发布</button>

@@ -21,6 +21,7 @@ Page({
             username: objInfo.username,
             userimg: objInfo.userimg,
             userconnect: objInfo.userconnect,
+            userphone: objInfo.userphone,
             thingname: objInfo.thingname,
             thinginfo: objInfo.thinginfo,
             thingclass: objInfo.thingclass,

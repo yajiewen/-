@@ -28,3 +28,15 @@
     </view>
     <view class="connectway">联系方式:{{userconnect}}</view>
 </view>
+
+<view style="display:flex" class="buttombar">
+    <view class="collect">
+        收藏
+    </view>
+    <view class="call">
+        拨打电话
+    </view>
+    <view class="copy">
+        复制微信
+    </view>
+</view>

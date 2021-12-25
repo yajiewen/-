@@ -85,3 +85,43 @@ page,.container {
     width: 100%;
     border-radius:20rpx;
 }
+.buttombar{
+    margin-bottom: 3rpx;
+    position:relative;
+    bottom: 0;
+    background:#fff;
+    margin-top:20rpx;
+    height: 90rpx;
+}
+
+.buttombar .collect{
+    width: 30%;
+    border: solid;
+    line-height: 90rpx;
+    text-align: center;
+    border-radius: 15rpx;
+    background-color: #ffd966;
+    color: white;
+}
+
+.buttombar .call{
+    margin-left: 20rpx;
+    border: solid;
+    width: 35%;
+    line-height: 90rpx;
+    text-align: center;
+    border-radius: 15rpx;
+    background-color: #ffd966;
+    color: white;
+}
+
+.buttombar .copy{
+    margin-left: 10rpx;
+    border: solid;
+    width: 35%;
+    line-height: 90rpx;
+    text-align: center;
+    border-radius: 15rpx;
+    background-color: red;
+    color: white
+}

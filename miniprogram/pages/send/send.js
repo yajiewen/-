@@ -17,7 +17,8 @@ Page({
     youhuiinfo: "",
     address: "",
     // 个人data
-    userconnect:"",
+    userconnect:"", //wexin
+    userphone:"",
     thingname: "",
     thinginfo: "",
     thingprice: "",
@@ -34,6 +35,9 @@ Page({
     // 商品类别
     leibie: ["学习类", "生活类", "数码类", "化妆品", "衣品类", "其他"],
     selectedindex: 0
+  },
+  getUserPhone(event){
+    this.data.userphone = event.detail.value
   },
   getUserConnect(event){
     this.data.userconnect = event.detail.value
@@ -483,6 +487,7 @@ Page({
         username: app.globaldata.userinfo.nickName,
         userimg: app.globaldata.userinfo.avatarUrl,
         userconnect: this.data.userconnect,
+        userphone: this.data.userphone,
         openid: app.globaldata.openid,
         thingname: this.data.thingname,
         thinginfo: this.data.thinginfo,
@@ -504,24 +509,24 @@ Page({
       }
     })
   },
-  onLoad() {
-    if (app.globaldata.openid == "") {
-      tools.showErrorToast('请先登陆')
-      setTimeout(function () {
-        wx.switchTab({
-          url: '/pages/user/user',
-        })
-      }, 1000)
-    }
-  },
-  onShow() {
-    if (app.globaldata.openid == "") {
-      tools.showErrorToast('请先登陆')
-      setTimeout(function () {
-        wx.switchTab({
-          url: '/pages/user/user',
-        })
-      }, 1000)
-    }
-  }
+  // onLoad() {
+  //   if (app.globaldata.openid == "") {
+  //     tools.showErrorToast('请先登陆')
+  //     setTimeout(function () {
+  //       wx.switchTab({
+  //         url: '/pages/user/user',
+  //       })
+  //     }, 1000)
+  //   }
+  // },
+  // onShow() {
+  //   if (app.globaldata.openid == "") {
+  //     tools.showErrorToast('请先登陆')
+  //     setTimeout(function () {
+  //       wx.switchTab({
+  //         url: '/pages/user/user',
+  //       })
+  //     }, 1000)
+  //   }
+  // }
 })
