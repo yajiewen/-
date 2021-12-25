@@ -3,21 +3,32 @@ let dbthinglist = wx.cloud.database().collection("thinglist")
 let tools = require('../../tools/tools')
 Page({
     data: {
-        thingList:[],
-        thingBath:0,
+        thingList: [],
+        thingBath: 0,
         gettedAll: false,
     },
+    // 图片删除
+    delFile(fileIdList) {
+        wx.cloud.deleteFile({
+            fileList: fileIdList
+        }).then(res => {
+            console.log("删除图片成功", res.fileList)
+        }).catch(error => {
+
+        })
+    },
     // 删除商品
-    delThing(event){
+    delThing(event) {
+        this.delFile(this.data.thingList[event.currentTarget.dataset.index].thingimg)
         dbthinglist.doc(this.data.thingList[event.currentTarget.dataset.index]._id).remove({
-            success: res =>{
+            success: res => {
                 tools.showRightToast("下架成功!")
-                this.data.thingList.splice(event.currentTarget.dataset.index,1)
+                this.data.thingList.splice(event.currentTarget.dataset.index, 1)
                 this.setData({
                     thingList: this.data.thingList
                 })
             },
-            fail: res =>{
+            fail: res => {
                 tools.showErrorToast("开了小差..")
             }
         })
@@ -32,24 +43,24 @@ Page({
         })
     },
     // 获取我的发布商品列表
-    getThingList(){
+    getThingList() {
         wx.cloud.callFunction({
-            name:"getMythings",
-            data:{
+            name: "getMythings",
+            data: {
                 index: this.data.thingBath,
                 openid: app.globaldata.openid,
             },
             success: res => {
                 console.log(res)
-                if(res.result.data.length != 0){
-                    for(let i = 0; i < res.result.data.length; i++){
+                if (res.result.data.length != 0) {
+                    for (let i = 0; i < res.result.data.length; i++) {
                         this.data.thingList.push(res.result.data[i]);
                     }
                     this.data.thingBath += 1
                     this.setData({
                         thingList: this.data.thingList,
                     })
-                }else{
+                } else {
                     this.data.gettedAll = true
                     console.log("获取完")
                 }
@@ -61,9 +72,9 @@ Page({
     },
 
     onReachBottom: function () {
-        if(!this.data.gettedAll){
+        if (!this.data.gettedAll) {
             this.getThingList()
-        }else{
+        } else {
             console.log("已经获取完")
         }
     },
