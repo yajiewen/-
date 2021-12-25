@@ -17,20 +17,20 @@
         "list": [
             {
                 "pagePath": "pages/index/index",
-                "iconPath": "static/images/ic_menu_home_nor.png",
-                "selectedIconPath": "static/images/ic_menu_home_pressed.png",
+                "iconPath": "static/images/home1.png",
+                "selectedIconPath": "static/images/home2.png",
                 "text": "首页面"
             },
             {
                 "pagePath": "pages/send/send",
-                "iconPath": "static/images/ic_menu_add_nor.png",
-                "selectedIconPath": "static/images/ic_menu_add_nor.png",
+                "iconPath": "static/images/send1.png",
+                "selectedIconPath": "static/images/send2.png",
                 "text": "发布"
             },
             {
                 "pagePath": "pages/user/user",
-                "iconPath": "static/images/ic_menu_me_nor.png",
-                "selectedIconPath": "static/images/ic_menu_me_pressed.png",
+                "iconPath": "static/images/user1.png",
+                "selectedIconPath": "static/images/user2.png",
                 "text": "个人中心"
             }
         ]
