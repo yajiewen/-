@@ -3,6 +3,13 @@ page,.container {
     height: 100%;
     background: #f4f4f4;
 }
+.item{
+    /* border: solid; */
+}
+.image1{
+    height: 350rpx;
+    width: 100%;
+}
 .scrollviewrow {
     margin-top: 20rpx;
     white-space: nowrap;

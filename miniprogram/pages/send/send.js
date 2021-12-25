@@ -510,7 +510,7 @@ Page({
       }
     })
   },
-  onShow() {
+  onShow(){
     if (app.globaldata.openid == "") {
       tools.showErrorToast('请先登陆')
       setTimeout(function () {

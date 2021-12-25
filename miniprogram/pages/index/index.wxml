@@ -1,11 +1,14 @@
 <!--index.wxml-->
 <view class="container">
   <swiper indicator-dots="true" autoplay="true" interval="5000" duration="500">
-    <!-- <block wx:for="{{background}}" wx:key="*this">
-          <swiper-item>
-            <view class="swiper-item {{item}}"></view>
-          </swiper-item>
-        </block> -->
+    <swiper-item>
+      <!-- <view class="item">
+          <image class="image1" src="/static/images/pzc.jpg"></image>
+      </view> -->
+      <view class="item">
+          
+      </view>
+    </swiper-item>
   </swiper>
 
   <!-- 纵向滚动 -->
@@ -28,12 +31,12 @@
       </view>
       <view class="infoclass">{{item.storeinfo}}</view>
       <view class="imageclass">
-        <image wx:for="{{item.storeimg}}" class="infoimage" src="{{item}}" wx:key="storeimgs" ></image>
+        <image wx:for="{{item.storeimg}}" class="infoimage" src="{{item}}" wx:key="storeimgs"></image>
       </view>
     </view>
     <!-- 商品列表 -->
-    <view  wx:for="{{thingList}}" wx:if="{{selectindex == index + 1}}" wx:key="thinglist">
-      <view class="thingclass" wx:for="{{item}}"  wx:key="thingitem" data-index="{{index}}" bindtap="gotoThingDetail">
+    <view wx:for="{{thingList}}" wx:if="{{selectindex == index + 1}}" wx:key="thinglist">
+      <view class="thingclass" wx:for="{{item}}" wx:key="thingitem" data-index="{{index}}" bindtap="gotoThingDetail">
         <view style="flex-direction:row; display: flex;">
           <view class="titleclass">{{item.thingname}}</view>
           <view class="priceclass">¥ {{item.thingprice}}</view>

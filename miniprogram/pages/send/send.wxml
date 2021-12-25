@@ -6,10 +6,10 @@
 </view>
 <view class="container" wx:if="{{storesend}}">
   <view class="post-goods">
-    <input class="title" maxlength="60" placeholder="店铺名称" bindinput="getStoreName" model:value = "{{storename}}"/>
-    <input class="title" maxlength="100" placeholder="店铺位置" bindinput="getStoreAddr" model:value = "{{address}}"/>
+    <input class="title" maxlength="20" placeholder="店铺名称 顾客一眼能找到" bindinput="getStoreName" model:value = "{{storename}}"/>
+    <input class="title" maxlength="100" placeholder="店铺位置 省 市 县 街道.." bindinput="getStoreAddr" model:value = "{{address}}"/>
     <view class="input-box">
-      <textarea class="content" maxlength="300" placeholder="优惠信息" bindinput="getYouHuiInfo" model:value = "{{youhuiinfo}}"/>
+      <textarea class="content" maxlength="300" placeholder="优惠信息 打折 半价.." bindinput="getYouHuiInfo" model:value = "{{youhuiinfo}}"/>
       <text class="count">{{300 - youhuiinfo.length}}</text>
     </view>
 
@@ -119,6 +119,6 @@
 
   </view>
   <view class="bottom-btn">
-    <button disabled="{{button2}}" class="r" bindtap='onPost2'>确认发布</button>
+    <button disabled="{{button2}}" class="r" bindtap='onPost2'>确 认 发 布</button>
   </view>
 </view>
