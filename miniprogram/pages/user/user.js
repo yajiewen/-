@@ -1,15 +1,13 @@
 // pages/user/user.js
 let app = getApp()
 Page({
-      /**
-     * 页面的初始数据
-     */
     data: {
       hasinfo:false,
       userinfo:{},
       delid:"",
       name:"",
-      imageurl:"cloud://cloud1-2gm9nq427383349e.636c-cloud1-2gm9nq427383349e-1308697825/yajie.png"
+      imageurl:"",
+      isdisable: false,
   },
   // 前往我发布的店铺页面
   gotoMystore(){
@@ -43,6 +41,9 @@ Page({
     },
   // 获取用户信息
   getUserProfile(){
+      this.setData({
+        isdisable: true,
+      })
       this.getOpenid()
       wx.getUserProfile({
           desc: '获取用户信息',
