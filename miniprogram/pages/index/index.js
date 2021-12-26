@@ -136,11 +136,15 @@ Page({
         if (this.data.thingBatch[this.data.selectindex - 1] == 0 && this.data.thingGetted[this.data.selectindex - 1] != true) {
             this.getThingList()
         }else{
-            console.log("以获取完")
+            console.log("已经获取完")
         }
     },
     onLoad() {
         // 获取商家列表
         this.getStoreList()
     }
+    ,
+    // onReachBottom: function (){
+    //     this.refreshInfoList()
+    // }
 })

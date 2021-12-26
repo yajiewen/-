@@ -1,18 +1,18 @@
 <!--index.wxml-->
 <view class="container">
-  <swiper indicator-dots="true" autoplay="true" interval="5000" duration="500">
-    <swiper-item>
-      <!-- <view class="item">
+  <!-- 纵向滚动 -->
+  <scroll-view scroll-y="true" style="height: 100%;" bindscrolltolower="refreshInfoList">
+    <!-- swiper -->
+    <swiper indicator-dots="true" autoplay="true" interval="5000" duration="500">
+      <swiper-item>
+        <!-- <view class="item">
           <image class="image1" src="/static/images/pzc.jpg"></image>
       </view> -->
-      <view class="itemswiper">
-          
-      </view>
-    </swiper-item>
-  </swiper>
-
-  <!-- 纵向滚动 -->
-  <scroll-view  bindscrolltolower="refreshInfoList" scroll-y="true" style="height: 100%;">
+        <view class="itemswiper">
+        </view>
+      </swiper-item>
+    </swiper>
+    <!-- 商品类别横向滚动 -->
     <view>
       <scroll-view enhanced="true" paging-enabled="true" scroll-x="true" class="scrollviewrow" style="border-radius: 50rpx;">
         <view class="scrollviewrow-item {{selectindex == 0 ? 'bt11':'bt1'}}" data-index="0" bindtap="changeStyle">美食商家</view>
