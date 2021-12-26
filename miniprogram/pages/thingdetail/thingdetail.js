@@ -18,6 +18,13 @@ Page({
         facetoface: "",
         nofacetoface: "",
     },
+    // 放大查看图片
+    seeImg(event){
+        wx.previewImage({
+            current: event.currentTarget.dataset.url,
+            urls: this.data.thingimg
+          })
+    },
     // 复制微信号
     makeCopy(event){
         if(this.data.userconnect != "")

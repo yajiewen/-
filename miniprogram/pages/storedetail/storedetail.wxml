@@ -11,5 +11,5 @@
 <view class="storeinfo" >
     <view style="display: flex;"><view class="titlediscount">店铺优惠信息详情</view></view>
     <view class="storeinfodis"><text>{{storeinfo}}</text></view>
-    <view class="storeimgs" wx:for="{{storeimg}}" wx:key="storeimginfo"><image class="storeimg" src="{{item}}"></image></view>
+    <view class="storeimgs" wx:for="{{storeimg}}" wx:key="storeimginfo"><image class="storeimg" src="{{item}}" data-url="{{item}}" bindtap="seeImg"></image></view>
 </view>

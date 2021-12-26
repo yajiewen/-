@@ -8,6 +8,13 @@ Page({
         storeinfo: "",
         storeimg: ""
     },
+    // preview 图片
+    seeImg(event){
+        wx.previewImage({
+            current: event.currentTarget.dataset.url,
+            urls: this.data.storeimg
+          })
+    },
     onLoad(option){
         // 把字符串解析为对象
         let objInfo = JSON.parse(option.info)

@@ -5,7 +5,7 @@
       <!-- <view class="item">
           <image class="image1" src="/static/images/pzc.jpg"></image>
       </view> -->
-      <view class="item">
+      <view class="itemswiper">
           
       </view>
     </swiper-item>

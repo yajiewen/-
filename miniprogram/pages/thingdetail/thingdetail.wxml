@@ -18,24 +18,27 @@
 </view>
 
 <view class="thinginfo">
-    <view style="display: flex;">
+    <!-- <view style="display: flex;">
         <view class="titlediscount">物品详情</view>
-    </view>
+    </view> -->
     <view class="thingname">{{thingname}}</view>
     <view class="thinginfodis"><text>{{thinginfo}}</text></view>
     <view class="thingimgs" wx:for="{{thingimg}}" wx:key="storeimginfo">
-        <image class="thingimg" src="{{item}}"></image>
+        <image data-url="{{item}}" bindtap="seeImg" class="thingimg" src="{{item}}"></image>
     </view>
 </view>
 
 <view style="display:flex" class="buttombar">
-    <view class="collect" bindtap="collectThing">
-        收藏
+    <view style="display:flex" class="collect" bindtap="collectThing">
+        <image class="bottmimg" src="/static/images/shoucang4.png"></image>
+        <view>收藏</view>
     </view>
-    <view class="call" bindtap="makeCall">
-        拨打电话
+    <view style="display:flex" class="call" bindtap="makeCall">
+        <image class="bottmimg" src="/static/images/call.png"></image>
+        <view>咨询</view>
     </view>
-    <view class="copy" bindtap="makeCopy">
-        复制微信
+    <view style="display:flex" class="copy" bindtap="makeCopy">
+        <image class="bottmimg" src="/static/images/wechat.png"></image>
+        <view>微信</view>
     </view>
 </view>
