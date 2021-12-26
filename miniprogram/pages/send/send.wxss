@@ -1,5 +1,4 @@
-page,
-.container {
+page,.container {
   height: 100%;
   background: #f4f4f4;
 }
@@ -66,50 +65,40 @@ page,
   text-align: center;
 }
 
-.post-goods {
-  width: 750rpx;
+.send-contain {
+  width: auto;
   height: auto;
   overflow: hidden;
-  padding: 30rpx;
+  margin: 30rpx;
+  border-radius: 15rpx;
 }
 
-.post-goods .input-box {
-  height: 337.5rpx;
-  width: 690rpx;
+.send-contain .discriber {
+  height: 350rpx;
   position: relative;
   background: #fff;
 }
 
-.post-goods .input-box .content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
+.send-contain .discriber .content {
   background: #fff;
-  font-size: 29rpx;
+  font-size: 30rpx;
   color: #333;
   height: 300rpx;
-  width: 650rpx;
+  width: auto;
   padding: 20rpx;
 }
 
-.post-goods .title {
-  /* position: absolute; */
-  top: 0;
-  left: 0;
-  display: block;
+.send-contain .title {
   background: #fff;
-  font-size: 29rpx;
+  font-size: 30rpx;
   color: #333;
   height: 35rpx;
-  width: 650rpx;
   padding: 20rpx;
-  /* margin:10px; */
   border-bottom: 1px solid #ddd;
   overflow: hidden;
 }
 
-.post-goods .input-box .count {
+.send-contain .discriber .count {
   position: absolute;
   bottom: 20rpx;
   right: 20rpx;
@@ -120,11 +109,11 @@ page,
   color: #999;
 }
 
-.post-goods .btns {
+.send-contain .btns {
   height: 108rpx;
 }
 
-.post-goods .close {
+.send-contain .close {
   float: left;
   height: 108rpx;
   line-height: 108rpx;
@@ -133,7 +122,7 @@ page,
   padding: 0 30rpx;
 }
 
-.post-goods .post {
+.send-contain .post {
   float: right;
   height: 108rpx;
   line-height: 108rpx;
@@ -152,7 +141,7 @@ page,
 .img .add .upload {
   height: 108rpx;
   width: 108rpx;
-  border: 2rpx solid #ddd;
+  border-radius: 10rpx;
 }
 
 .img .add .delete {
@@ -167,10 +156,10 @@ page,
   display: block;
   height: 110rpx;
   width: 110rpx;
-  /* margin-right:27rpx; */
   margin-right: 20rpx;
   background: #f4f4f4;
   border: 1rpx solid #ddd;
+  border-radius: 10rpx;
   margin-bottom: 30rpx;
 }
 
@@ -207,28 +196,26 @@ page,
 }
 
 .bottom-btn {
-  position: relative;
-  left: 0;
-  bottom: 0;
-  z-index: 10;
-  width: 750rpx;
-  display: flex;
-  padding: 25rpx;
+  width: auto;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  margin-bottom: 20rpx;
+  border-radius: 15rpx;
 }
 
 .bottom-btn .r {
   border: 1px solid #ffd966;
   background: #ffd966;
-  float: left;
   line-height: 60rpx;
-  flex: 1;
+  width: 100%;
   text-align: center;
   color: #fff;
 }
 
 
 .detail {
-  margin: 0 30rpx 0 30rpx;
+  /* margin: 0 30rpx 0 30rpx; */
+  margin: 30rpx;
   width: 690rpx;
   height: auto;
   overflow: hidden;
@@ -236,6 +223,7 @@ page,
   background: #fff;
   padding-top: 10rpx;
   padding-bottom: 170rpx;
+  border-radius: 15rpx;
 }
 
 .detail .element {

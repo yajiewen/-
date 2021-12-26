@@ -8,6 +8,7 @@ page,.container {
     height: auto;
     background: #fff;
     border-radius: 15rpx;
+    padding-bottom: 10rpx;
 }
 
 .titleclass {

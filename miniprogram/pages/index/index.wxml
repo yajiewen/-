@@ -12,9 +12,9 @@
   </swiper>
 
   <!-- 纵向滚动 -->
-  <scroll-view bindscrolltolower="refreshInfoList" scroll-y="true" style="height: 100%;">
+  <scroll-view  bindscrolltolower="refreshInfoList" scroll-y="true" style="height: 100%;">
     <view>
-      <scroll-view enhanced="true" paging-enabled="true" scroll-x="true" class="scrollviewrow">
+      <scroll-view enhanced="true" paging-enabled="true" scroll-x="true" class="scrollviewrow" style="border-radius: 50rpx;">
         <view class="scrollviewrow-item {{selectindex == 0 ? 'bt11':'bt1'}}" data-index="0" bindtap="changeStyle">美食商家</view>
         <view class="scrollviewrow-item {{selectindex == 1 ? 'bt11':'bt1'}}" data-index="1" bindtap="changeStyle">学习类 </view>
         <view class="scrollviewrow-item {{selectindex == 2 ? 'bt11':'bt1'}}" data-index="2" bindtap="changeStyle">生活类</view>

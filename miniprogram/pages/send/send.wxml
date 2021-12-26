@@ -5,10 +5,10 @@
         </view>
 </view>
 <view class="container" wx:if="{{storesend}}">
-  <view class="post-goods">
+  <view class="send-contain">
     <input class="title" maxlength="20" placeholder="店铺名称 顾客一眼能找到" bindinput="getStoreName" model:value = "{{storename}}"/>
     <input class="title" maxlength="100" placeholder="店铺位置 省 市 县 街道.." bindinput="getStoreAddr" model:value = "{{address}}"/>
-    <view class="input-box">
+    <view class="discriber">
       <textarea class="content" maxlength="300" placeholder="优惠信息 打折 半价.." bindinput="getYouHuiInfo" model:value = "{{youhuiinfo}}"/>
       <text class="count">{{300 - youhuiinfo.length}}</text>
     </view>
@@ -30,7 +30,7 @@
         </view>
       </view>
       <view wx:if="{{imgList.length < 6}}" class='add' bindtap='addImage'>
-        <text class='txt'>添加图片</text>
+        <text class='txt'>上传图片</text>
         <image class='icon' src='/static/images/plus.png'></image>
       </view>
     </view>
@@ -41,9 +41,9 @@
 </view>
 
 <view class="container" wx:if="{{personsend}}">
-  <view class="post-goods">
+  <view class="send-contain">
     <input class="title" maxlength="25" placeholder="请输入 标题，宝贝名称 品牌" bindinput="getThingName" model:value = "{{thingname}}"/>
-    <view class="input-box">
+    <view class="discriber">
       <textarea class="content" bindinput="getThingInfo" maxlength="800" placeholder="请描述一下您的宝贝 如品牌 成色 规格 购买渠道 转手原因等" model:value = "{{thinginfo}}"/>
       <text class="count">{{500 - thinginfo.length}}</text>
     </view>
@@ -65,7 +65,7 @@
         </view>
       </view>
       <view wx:if="{{imgList2.length < 6}}" class='add' bindtap='addImage2'>
-        <text class='txt'>添加图片</text>
+        <text class='txt'>上传图片</text>
         <image class='icon' src='/static/images/plus.png'></image>
       </view>
     </view>
