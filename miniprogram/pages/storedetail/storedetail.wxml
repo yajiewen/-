@@ -5,7 +5,10 @@
         <view class="usernameview">{{username}}</view>
         <view class="storename">{{storename}}</view>
     </view>
-    <view class="storeaddress">{{storeaddress}}</view>
+    <view class="addressview" bindtap="openMap">
+        <view><image class="addressicon" src="/static/images/daohang.png"></image></view>
+        <view class="storeaddress">{{storeaddress}}</view>
+    </view>
 </view>
 
 <view class="storeinfo" >

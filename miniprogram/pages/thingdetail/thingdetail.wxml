@@ -15,6 +15,7 @@
         <view>交易方式: 邮寄</view>
         <view>运费:{{thingtranprice}}</view>
     </view>
+    <view class="warnview"><text class="warn" decode="true">&nbsp;&nbsp;注意: 本平台不提供交易功能,请仔细鉴别信息,如遇到不法侵害,请及时报警.</text></view>
 </view>
 
 <view class="thinginfo">
@@ -26,6 +27,9 @@
     <view class="thingimgs" wx:for="{{thingimg}}" wx:key="storeimginfo">
         <image data-url="{{item}}" bindtap="seeImg" class="thingimg" src="{{item}}"></image>
     </view>
+</view>
+
+<view class="bottomplace">
 </view>
 
 <view style="display:flex" class="buttombar">

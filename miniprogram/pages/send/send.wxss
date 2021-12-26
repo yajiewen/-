@@ -71,6 +71,7 @@ page,.container {
   overflow: hidden;
   margin: 30rpx;
   border-radius: 15rpx;
+  background-color: #fff;
 }
 
 .send-contain .discriber {
@@ -276,4 +277,13 @@ page,.container {
   line-height: 50rpx;
   width: 400rpx;
   color: #666;
+}
+.addressview{
+  padding: 20rpx;
+  display: flex;
+  background: #fff;
+}
+.addressicon{
+  height: 50rpx;
+  width: 50rpx;
 }

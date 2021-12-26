@@ -9,6 +9,11 @@
         "pages/mythings/mythings",
         "pages/mystore/mystore"
     ],
+    "permission": {
+        "scope.userLocation": {
+          "desc": "你的位置信息将用于小程序位置接口的效果展示"
+        }
+      },
     "tabBar": {
         "color": "#7A7E83",
         "selectedColor": "#ffd966",
@@ -19,7 +24,7 @@
                 "pagePath": "pages/index/index",
                 "iconPath": "static/images/home1.png",
                 "selectedIconPath": "static/images/home2.png",
-                "text": "首页面"
+                "text": "首页"
             },
             {
                 "pagePath": "pages/send/send",

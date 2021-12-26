@@ -7,7 +7,7 @@
 <view class="container" wx:if="{{storesend}}">
   <view class="send-contain">
     <input class="title" maxlength="20" placeholder="店铺名称 顾客一眼能找到" bindinput="getStoreName" model:value = "{{storename}}"/>
-    <input class="title" maxlength="100" placeholder="店铺位置 省 市 县 街道.." bindinput="getStoreAddr" model:value = "{{address}}"/>
+    <!-- <input class="title" maxlength="100" placeholder="店铺位置 省 市 县 街道.." bindinput="getStoreAddr" model:value = "{{address}}"/> -->
     <view class="discriber">
       <textarea class="content" maxlength="300" placeholder="优惠信息 打折 半价.." bindinput="getYouHuiInfo" model:value = "{{youhuiinfo}}"/>
       <text class="count">{{300 - youhuiinfo.length}}</text>
@@ -33,6 +33,11 @@
         <text class='txt'>上传图片</text>
         <image class='icon' src='/static/images/plus.png'></image>
       </view>
+    </view>
+
+    <view class="addressview" bindtap="chooseAddr">
+      <view class="addressicon"><image class="addressicon" src="/static/images/dinwei.png"></image></view>
+      <view>{{address}}</view>
     </view>
   </view>
   <view class="bottom-btn">

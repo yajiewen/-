@@ -6,6 +6,10 @@ let dbthinglist = db.collection("thinglist")
 
 Page({
   data: {
+    // 维度
+    latitude:"",
+    // 经度
+    longitude:"",
     // 商户image
     imgList: [],
     tmpImgList: [],
@@ -15,7 +19,7 @@ Page({
     // 商户data
     storename: "",
     youhuiinfo: "",
-    address: "",
+    address: "点击择位置",
     // 个人data
     userconnect:"", //wexin
     userphone:"",
@@ -36,6 +40,18 @@ Page({
     leibie: ["学习类", "生活类", "数码类", "化妆品", "衣品类", "其他"],
     selectedindex: 0
   },
+  // 选择位置
+  chooseAddr(){
+    wx.chooseLocation({
+      success: res =>{
+        this.setData({
+          address: res.address,
+          latitude: res.latitude,
+          longitude: res.longitude
+        })
+      }
+    })
+  },
   getUserPhone(event){
     this.data.userphone = event.detail.value
   },
@@ -49,7 +65,9 @@ Page({
       tmpImgList: [],
       storename: "",
       youhuiinfo: "",
-      address: "",
+      address: "点击择位置",
+      latitude:"",
+      longitude:"",
     })
   },
   // 刷新商品信息
@@ -348,6 +366,14 @@ Page({
   },
   // 商户上传
   onPost() {
+    if(app.globaldata.openid.trim() == ""){
+      tools.showErrorToast("请先登陆")
+      return
+    }
+    if (this.data.latitude == "" || this.data.longitude == "") {
+      tools.showErrorToast("请选择位置")
+      return
+    }
     if (this.data.storename.trim() == "") {
       tools.showErrorToast("请填写店铺名称")
       return
@@ -380,46 +406,29 @@ Page({
               console.log("删除成功", res.fileList)
             }).catch(error => {
             })
-            dbstorelist.where({
-              _openid: app.globaldata.openid,
-              storename: this.data.storename,
-            }).update({
-              data: {
-                openid: app.globaldata.openid,
-                storename: this.data.storename,
-                storeaddress: this.data.address,
-                storeinfo: this.data.youhuiinfo,
-                storeimg: this.data.imgList
-              },
-              success: res => {
-                tools.showRightToast("更新成功")
-                this.setData({
-                  button1: !this.data.button1
-                })
-                this.clearStoreInfo()
-              }
-            })
-          } else { // 更新信息
-            dbstorelist.where({
-              _openid: app.globaldata.openid,
-              storename: this.data.storename,
-            }).update({
-              data: {
-                openid: app.globaldata.openid,
-                storename: this.data.storename,
-                storeaddress: this.data.address,
-                storeinfo: this.data.youhuiinfo,
-                storeimg: this.data.imgList
-              },
-              success: res => {
-                tools.showRightToast("更新成功")
-                this.setData({
-                  button1: !this.data.button1
-                })
-                this.clearStoreInfo()
-              }
-            })
           }
+          // 开始更新
+            dbstorelist.where({
+              _openid: app.globaldata.openid,
+              storename: this.data.storename,
+            }).update({
+              data: {
+                openid: app.globaldata.openid,
+                storename: this.data.storename,
+                storeaddress: this.data.address,
+                latitude: this.data.latitude,
+                longitude: this.data.longitude,
+                storeinfo: this.data.youhuiinfo,
+                storeimg: this.data.imgList
+              },
+              success: res => {
+                tools.showRightToast("更新成功")
+                this.setData({
+                  button1: !this.data.button1
+                })
+                this.clearStoreInfo()
+              }
+            })
         }else{
           dbstorelist.add({
             data: {
@@ -428,6 +437,8 @@ Page({
               openid: app.globaldata.openid,
               storename: this.data.storename,
               storeaddress: this.data.address,
+              latitude: this.data.latitude,
+              longitude: this.data.longitude,
               storeinfo: this.data.youhuiinfo,
               storeimg: this.data.imgList
             },

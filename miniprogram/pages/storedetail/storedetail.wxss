@@ -23,6 +23,15 @@ page,.container {
     text-align: center;
     /* border: solid; */
 }
+.addressview{
+    display: flex;
+    border-bottom: solid thin;
+}
+.addressicon{
+    margin-top: 15rpx;
+    height:50rpx ;
+    width:50rpx ;
+}
 .storeaddress{
     margin: 20rpx;
     color: #72777b;
@@ -47,7 +56,7 @@ page,.container {
     height: 40rpx;
     line-height: 40rpx;
     text-align: left;
-    font-size: small;
+    font-size: 40rpx;
     border-left:#ffd966 solid;
 }
 
@@ -60,8 +69,8 @@ page,.container {
     color: #72777b;
 }
 .storeimgs{
-    margin-left:3rpx;
-    margin-right: 3rpx;
+    margin-left:10rpx;
+    margin-right: 10rpx;
     margin-top: 5rpx;
     width: auto;
     height: auto;
@@ -69,5 +78,6 @@ page,.container {
 
 .storeimg{
     width: 100%;
+    height: 600rpx;
     border-radius:20rpx;
 }

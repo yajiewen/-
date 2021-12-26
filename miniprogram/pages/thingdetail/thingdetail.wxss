@@ -48,6 +48,7 @@ page,.container {
 }
 .trans{
     margin-left:20rpx;
+    padding-bottom: 10rpx;
 }
 .thinginfo{
     background: #fff;
@@ -87,21 +88,27 @@ page,.container {
 }
 .thingimg{
     width: 100%;
+    height: 600rpx;
     border-radius:20rpx;
+}
+.bottomplace{
+    height: 100rpx;
 }
 .buttombar{
     position: fixed;
     bottom: 0;
-    height: 90rpx;
+    height: 80rpx;
     width: 100%;
+    background-color: #f4f4f4;
 }
 
 .buttombar .collect{
     width: 33%;
     /* border: solid; */
-    line-height: 90rpx;
+    line-height: 80rpx;
     border-radius: 15rpx;
     color: #666;
+    background-color: #f4f4f4;
 }
 .bottmimg{
     margin-left: 30%;
@@ -113,17 +120,26 @@ page,.container {
 .buttombar .call{
     /* border: solid; */
     width: 33%;
-    line-height: 90rpx;
+    line-height: 80rpx;
     text-align: center;
     border-radius: 15rpx;
     color: #666;
+    background-color: #f3c63c;
 }
 
 .buttombar .copy{
     /* border: solid; */
-    width: 33%;
-    line-height: 90rpx;
+    width: 34%;
+    line-height: 80rpx;
     text-align: center;
     border-radius: 15rpx;
     color: #666;
+    background-color: #f3c63c;
+}
+.warnview{
+    margin: 20rpx;
+    padding-bottom: 10rpx;
+}
+.warn{
+    color: red;
 }
