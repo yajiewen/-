@@ -27,6 +27,10 @@ color: #aaa;
   position: relative;
   top: 400rpx;
 }
+.botton2{
+  background-color: #f3c63c;
+  color: white;
+}
 .menu{
   margin: 20rpx;
   /* border: solid; */

@@ -38,7 +38,7 @@ page,.container {
     text-align: center;
     border-bottom: thin solid;
     /* border-bottom-color: #ffd966; */
-    color: #ffd966;
+    color: #f3c63c;
 }
 
 .thingclass {

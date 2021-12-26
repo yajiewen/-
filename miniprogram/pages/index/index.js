@@ -4,6 +4,8 @@ const app = getApp()
 
 Page({
     data: {
+        // 下拉刷新状态
+        refstate: false,
         selectindex: 0, // 导航下标
         // 店铺列表
         storeList: [],
@@ -43,8 +45,8 @@ Page({
           url: "/pages/thingdetail/thingdetail?info=" + data,
         })
     },
-    // 上拉刷新
-    refreshInfoList(event) {
+    // 上拉添加
+    addInfoList(event) {
         if (this.data.selectindex == 0 ) { //当前市商家列表
             if(this.storeGetted == false){
                 this.getStoreList()
@@ -132,11 +134,13 @@ Page({
         this.setData({
             selectindex: this.data.selectindex
         })
+        if(this.data.selectindex == 0 && this.data.storeGetted == false) //选中美食商家
+        {
+            this.getStoreList()
+        }
         // 个人物品对应类别若还没获取数据则获取数据
-        if (this.data.thingBatch[this.data.selectindex - 1] == 0 && this.data.thingGetted[this.data.selectindex - 1] != true) {
+        if (this.data.selectindex != 0 && this.data.thingBatch[this.data.selectindex - 1] == 0 && this.data.thingGetted[this.data.selectindex - 1] != true) {
             this.getThingList()
-        }else{
-            console.log("已经获取完")
         }
     },
     onLoad() {
@@ -144,7 +148,42 @@ Page({
         this.getStoreList()
     }
     ,
-    // onReachBottom: function (){
-    //     this.refreshInfoList()
-    // }
+    // scrol view 下拉刷新
+    refreshList(){
+        console.log("刷新")
+        // 刷新批次 为0
+        this.data.storeBatch = 0
+        this.data.thingBatch = [0, 0, 0, 0, 0, 0]
+        // 刷新是否获取完 为false
+        this.data.thingGetted = [false, false, false, false, false, false] 
+        this.data.storeGetted = false
+        // 刷新列表内容
+        this.data.storeList = []
+        this.data.thingList = [
+            [],
+            [],
+            [],
+            [],
+            [],
+            []
+        ]
+        // 刷新选中下标
+        this.data.selectindex = 0
+        // 渲染
+        this.setData({
+            storeBatch : this.data.storeBatch,
+            thingBatch: this.data.thingBatch,
+            storeList: this.data.storeList,
+            thingList: this.data.thingList,
+            thingGetted: this.data.thingGetted,
+            storeGetted: this.data.storeGetted,
+            selectindex: this.data.selectindex
+        })
+        this.getStoreList()
+        setTimeout(res =>{
+            this.setData({
+                refstate : false
+            })
+        },200)
+    }
 })

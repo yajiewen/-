@@ -17,8 +17,16 @@ function showLoadToast(msg) {
     image: '/static/images/loading.png'
   })
 }
+
+function showLoginToast(msg) {
+  wx.showToast({
+    title: msg,
+    image: '/static/images/login.png'
+  })
+}
 module.exports = {
     showErrorToast,
     showRightToast,
-    showLoadToast
+    showLoadToast,
+    showLoginToast
 }

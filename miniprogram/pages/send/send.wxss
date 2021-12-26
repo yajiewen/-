@@ -35,8 +35,8 @@ page,.container {
   width: 50%;
   text-align: center;
   border-bottom: thin solid;
-  border-bottom-color: #ffd966;
-  color: #ffd966;
+  border-bottom-color: #f3c63c;
+  color: #f3c63c;
   font-size: medium;
 }
 
@@ -53,8 +53,8 @@ page,.container {
   width: 50%;
   text-align: center;
   border-bottom: thin solid;
-  border-bottom-color: #ffd966;
-  color: #ffd966;
+  border-bottom-color: #f3c63c;
+  color: #f3c63c;
   font-size: medium;
 }
 
@@ -205,7 +205,7 @@ page,.container {
 
 .bottom-btn .r {
   border: 1px solid #ffd966;
-  background: #ffd966;
+  background: #f3c63c;
   line-height: 60rpx;
   width: 100%;
   text-align: center;
@@ -263,6 +263,7 @@ page,.container {
 .leibieclass {
   line-height: 50rpx;
   margin-right: 10rpx;
+  width: 300rpx;
 }
 
 .detail .i {

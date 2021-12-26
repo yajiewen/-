@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view class="container">
   <!-- 纵向滚动 -->
-  <scroll-view scroll-y="true" style="height: 100%;" bindscrolltolower="refreshInfoList">
+  <scroll-view scroll-y="true" style="height: 100%;" bindscrolltolower="addInfoList" refresher-enabled="true" bindrefresherrefresh="refreshList" refresher-triggered="{{refstate}}">
     <!-- swiper -->
     <swiper indicator-dots="true" autoplay="true" interval="5000" duration="500">
       <swiper-item>

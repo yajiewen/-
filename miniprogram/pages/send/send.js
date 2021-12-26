@@ -512,7 +512,7 @@ Page({
   },
   onShow(){
     if (app.globaldata.openid == "") {
-      tools.showErrorToast('请先登陆')
+      tools.showLoginToast('请先登陆')
       setTimeout(function () {
         wx.switchTab({
           url: '/pages/user/user',
