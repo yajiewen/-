@@ -103,7 +103,7 @@
 
     <view class="element">
       <view class="lable">交易方式</view>
-      <radio-group bindchange="dealway">
+      <radio-group bindchange="dealway" class="radiotran">
         <label>
           <radio color="#ffd966" value="facetoface" />同城面交
           <radio color="#ffd966" value="nofacetoface"/>邮寄

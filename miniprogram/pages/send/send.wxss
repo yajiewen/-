@@ -232,19 +232,28 @@ page,.container {
   height: 70rpx;
   border-bottom: 1rpx solid #eee;
   margin-top: 30rpx;
+  /* border: solid; */
 }
 
 .detail .lable {
   width: 130rpx;
   margin-right: 10rpx;
-  line-height: 60rpx;
+  line-height: 56rpx;
+  /* border: solid; */
 }
 
 .detail .price {
-  font-size: 35rpx;
+  line-height: 50rpx;
+  height: auto;
   width: 310rpx;
+  /* border: solid; */
+  margin-bottom: 15rpx;
 }
-
+.radiotran{
+  line-height: 50rpx;
+  height: auto;
+  /* border: solid; */
+}
 .detail .checkbox-b {
   margin: 0 10rpx 0 5rpx;
 }
@@ -259,6 +268,7 @@ page,.container {
 .detail .rmb {
   line-height: 50rpx;
   margin-right: 10rpx;
+  /* border: solid; */
 }
 
 .leibieclass {
