@@ -521,14 +521,14 @@ Page({
       }
     })
   },
-  // onShow(){
-  //   if (app.globaldata.openid == "") {
-  //     tools.showLoginToast('请先登陆')
-  //     setTimeout(function () {
-  //       wx.switchTab({
-  //         url: '/pages/user/user',
-  //       })
-  //     }, 1000)
-  //   }
-  // }
+  onShow(){
+    if (app.globaldata.openid == "") {
+      tools.showLoginToast('请先登陆')
+      setTimeout(function () {
+        wx.switchTab({
+          url: '/pages/user/user',
+        })
+      }, 1000)
+    }
+  }
 })

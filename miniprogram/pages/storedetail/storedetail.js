@@ -5,27 +5,31 @@ Page({
         userimg: "",
         storename: "",
         storeaddress: "",
-        latitude:"",
-        longitude:"",
+        latitude: "",
+        longitude: "",
         storeinfo: "",
         storeimg: ""
+    },
+    // 展示加载
+    showLoad() {
+        wx.showLoading({
+            title: '加载中',
+        })
+    },
+    // 关闭加载
+    closeLoad() {
+        wx.hideLoading({
+            success: (res) => {},
+        })
     },
     // 地图
     openMap() {
         wx.openLocation({
             latitude: this.data.latitude,
-            longitude:this.data.longitude,
+            longitude: this.data.longitude,
             scale: 18,
             address: this.data.storeaddress
-          })
-        // wx.getLocation({
-        //     type: 'gcj02',
-        //     // isHighAccuracy: true,
-        //     success: res=> {
-        //         const latitude = res.latitude
-        //         const longitude = res.longitude
-        //     }
-        // })
+        })
     },
     // preview 图片
     seeImg(event) {

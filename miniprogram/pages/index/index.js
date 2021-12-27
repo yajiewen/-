@@ -29,6 +29,18 @@ Page({
         // 商品类别
         leibie: ["学习类", "生活类", "数码类", "化妆品", "衣品类", "其他"],
     },
+        // 展示加载
+        showLoad() {
+            wx.showLoading({
+                title: '加载中',
+            })
+        },
+        // 关闭加载
+        closeLoad() {
+            wx.hideLoading({
+                success: (res) => {},
+            })
+        },
     gotoStoreDetail(event){
         let info = this.data.storeList[event.currentTarget.dataset.index]
         // 把当前商品信息转化为字符串传递到另外一个页面
@@ -63,6 +75,8 @@ Page({
         }
     },
     getThingList(event) {
+        // 开启load
+        this.showLoad()
         console.log(this.data.leibie[this.data.selectindex - 1])
         // 云函数获取数据
         wx.cloud.callFunction({
@@ -84,29 +98,36 @@ Page({
                         thingList: this.data.thingList,
                         thingBatch: this.data.thingBatch
                     })
+                    // 关闭load
+                    this.closeLoad()
                 }else{ // 没获取到数据说明以获取完 不能再获取
                     this.data.thingGetted[this.data.selectindex - 1] = true;
                     this.setData({
                         thingGetted : this.data.thingGetted
                     })
+                    // 关闭load
+                    this.closeLoad()
                     console.log("已获取完")
                 }
                 console.log(this.data.thingList)
                 console.log(this.data.thingBatch)
             },
             fail(res) {
+                // 关闭load
+                this.closeLoad()
+                tools.showErrorToast("网络君开了小差...")
                 console.log("请求失败", res)
             }
         })
     },
     getStoreList(event) {
+        this.showLoad()
         wx.cloud.callFunction({
             name: "getStoreInfoList",
             data: {
                 index: this.data.storeBatch
             },
             success: res => {
-            
                 if (res.result.data.length != 0) {
                     this.data.storeBatch += 1
                     for (let i = 0; i < res.result.data.length; i++) {
@@ -116,7 +137,11 @@ Page({
                         storeList: this.data.storeList,
                         storeBatch: this.data.storeBatch
                     })
+                    // 关闭load
+                    this.closeLoad()
                 }else{
+                    // 关闭load
+                    this.closeLoad()
                     this.data.storeGetted = true
                     console.log("店铺获取完成")
                 }
@@ -124,6 +149,9 @@ Page({
                 console.log(this.data.storeBatch)
             },
             fail(res) {
+                // 关闭load
+                this.closeLoad()
+                tools.showErrorToast("网络君开了小差...")
                 console.log("请求失败", res)
             }
         })

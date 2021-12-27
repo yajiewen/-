@@ -10,14 +10,26 @@ Page({
         thingBath: 0,
         gettedAll: false
     },
+    // 展示加载
+    showLoad() {
+        wx.showLoading({
+            title: '加载中',
+        })
+    },
+    // 关闭加载
+    closeLoad() {
+        wx.hideLoading({
+            success: (res) => {},
+        })
+    },
     // 取消收藏
-    cancelCollect(event){
+    cancelCollect(event) {
         dbcollect.doc(this.data.thingList[event.currentTarget.dataset.index]._id).remove({
-            success: res =>{
+            success: res => {
                 console.log(res)
                 tools.showRightToast("取消成功!")
-                this.data.thingList.splice(event.currentTarget.dataset.index,1)
-                this.data.thingInfoList.splice(event.currentTarget.dataset.index,1)
+                this.data.thingList.splice(event.currentTarget.dataset.index, 1)
+                this.data.thingInfoList.splice(event.currentTarget.dataset.index, 1)
                 this.setData({
                     thingInfoList: this.data.thingInfoList
                 })
@@ -35,7 +47,7 @@ Page({
             url: "/pages/thingdetail/thingdetail?info=" + data,
         })
     },
-    getThingList(){
+    getThingList() {
         wx.cloud.callFunction({
             name: "getMyCollect",
             data: {
@@ -52,11 +64,11 @@ Page({
                         this.data.thingList.push(res.result.data[i])
                         // 获取商品信息
                         dbthinglist.where({
-                            _id:  res.result.data[i].thingid,
+                            _id: res.result.data[i].thingid,
                         }).get({
                             success: res => {
                                 console.log(res)
-                                if(res.data.length != 0){
+                                if (res.data.length != 0) {
                                     this.data.thingInfoList.push(res.data[0])
                                     this.setData({
                                         thingInfoList: this.data.thingInfoList
@@ -71,7 +83,11 @@ Page({
                     this.setData({
                         thingList: this.data.thingList,
                     })
+                    // 关闭load
+                    this.closeLoad()
                 } else {
+                    // 关闭load
+                    this.closeLoad()
                     this.data.gettedAll = true
                 }
                 console.log(this.data.thingList)
@@ -82,12 +98,13 @@ Page({
 
     onLoad: function (options) {
         this.getThingList()
+        this.showLoad()
     },
 
     onReachBottom: function () {
         if (!this.data.gettedAll) {
             this.getThingList()
-        }else{
+        } else {
             console.log("已获取完")
         }
     },

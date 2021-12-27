@@ -7,6 +7,19 @@ Page({
         thingBath: 0,
         gettedAll: false,
     },
+    // 展示加载
+    showLoad(){
+        wx.showLoading({
+          title: '加载中',
+        })
+    },
+    // 关闭加载
+    closeLoad(){
+        wx.hideLoading({
+          success: (res) => {
+          },
+        })
+    },
     // 图片删除
     delFile(fileIdList) {
         wx.cloud.deleteFile({
@@ -60,7 +73,11 @@ Page({
                     this.setData({
                         thingList: this.data.thingList,
                     })
+                    // 关闭loading
+                    this.closeLoad()
                 } else {
+                    // 关闭loading
+                    this.closeLoad()
                     this.data.gettedAll = true
                     console.log("获取完")
                 }
@@ -69,6 +86,7 @@ Page({
     },
     onLoad: function (options) {
         this.getThingList()
+        this.showLoad()
     },
 
     onReachBottom: function () {
