@@ -57,5 +57,10 @@ Page({
           fail: (res) => {},
           complete: (res) => {},
         })
+        setTimeout(res =>{
+          this.setData({
+            isdisable: false,
+          })
+        },1000)
   },
 })
