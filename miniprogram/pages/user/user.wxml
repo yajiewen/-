@@ -29,5 +29,10 @@
     <view class="token"><image class="tokenimg" src="/static/images/mysendstore.png"></image></view>
     <view class="mycollect" bindtap="gotoMystore">我 发 布 的 店 铺</view>
   </view>
+
+  <view style="display: flex;">
+    <view class="token"><image class="tokenimg" src="/static/images/wechat2.png"></image></view>
+    <view class="mycollect" bindtap="makeCopy">联 系 开 发 者</view>
+  </view>
   </view>
 </view>

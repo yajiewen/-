@@ -1,5 +1,6 @@
 // pages/user/user.js
 let app = getApp()
+let tools = require('../../tools/tools')
 Page({
     data: {
       hasinfo:false,
@@ -9,6 +10,17 @@ Page({
       imageurl:"",
       isdisable: false,
   },
+  makeCopy(event){
+        wx.setClipboardData({
+            data: "qq:909092921",
+            success: res =>{
+                tools.showRightToast("已获取开发者QQ")
+            },
+            fail: res =>{
+                tools.showErrorToast("开了小差...")
+            }
+          })
+    },
   // 前往我发布的店铺页面
   gotoMystore(){
     wx.navigateTo({
