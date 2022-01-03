@@ -14,7 +14,7 @@ Page({
         wx.setClipboardData({
             data: "QQ:909092921",
             success: res =>{
-                tools.showRightToast("已获作者QQ")
+                tools.showRightToast("已复制作者QQ")
             },
             fail: res =>{
                 tools.showErrorToast("开了小差...")
