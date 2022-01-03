@@ -7,6 +7,17 @@ Page({
         thingBath: 0,
         gettedAll: false,
     },
+    delAllCollect(id){
+        wx.cloud.callFunction({
+            name: "delMyCollect",
+            data: {
+                thingid: id,
+            },
+            success: res =>{
+                console.log("所有收藏已删除")
+            }
+        })
+    },
     // 展示加载
     showLoad(){
         wx.showLoading({
@@ -33,6 +44,9 @@ Page({
     // 删除商品
     delThing(event) {
         this.delFile(this.data.thingList[event.currentTarget.dataset.index].thingimg)
+        // 删除收藏库中数据
+        this.delAllCollect(this.data.thingList[event.currentTarget.dataset.index]._id)
+        // 删除thinglist库中数据
         dbthinglist.doc(this.data.thingList[event.currentTarget.dataset.index]._id).remove({
             success: res => {
                 tools.showRightToast("下架成功!")
@@ -45,6 +59,7 @@ Page({
                 tools.showErrorToast("开了小差..")
             }
         })
+
     },
     // 去详情页面
     gotoThingDetail(event) {
