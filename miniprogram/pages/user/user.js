@@ -12,9 +12,9 @@ Page({
   },
   makeCopy(event){
         wx.setClipboardData({
-            data: "qq:909092921",
+            data: "QQ:909092921",
             success: res =>{
-                tools.showRightToast("已获取开发者QQ")
+                tools.showRightToast("已获作者QQ")
             },
             fail: res =>{
                 tools.showErrorToast("开了小差...")
