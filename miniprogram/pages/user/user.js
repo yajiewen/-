@@ -44,10 +44,10 @@ Page({
       this.setData({
         isdisable: true,
       })
-      this.getOpenid()
       wx.getUserProfile({
           desc: '获取用户信息',
           success: (result) => {
+            this.getOpenid()
             this.setData({
               userinfo: result.userInfo,
               hasinfo: true
